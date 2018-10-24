@@ -1,0 +1,128 @@
+
+//语言切换
+function change_language(local) {
+	$.post(base + "/language/change", "local=" + local, function(info) {
+		if (info.code == "success") {
+			//判断微信
+			var ua = window.navigator.userAgent.toLowerCase();
+			if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+				var timestamp = new Date().getTime();
+				window.location.href = window.location.href + "?time=" + timestamp;
+			} else {
+				window.location.reload();
+			}
+		}
+	}, "json");
+}
+
+function login_out() {
+	$.post(base + "/member/out", "", function(info) {
+		if (info.code == "success") {
+			layer.msg(info.msg, {
+				icon : 1,
+				time : 2000
+			});
+
+			setTimeout(function() {
+				window.location.reload();
+			}, 1000);
+		}
+	}, "json");
+}
+
+
+$(function() {
+	var boxs = $(".token-check-condition").find(".accept");
+	$(boxs).click(function() {
+		var count = 0;
+		boxs.each(function() {
+			if ($(this).prop("checked") == true) {
+				count++;
+			}
+		});
+
+		if (count >= boxs.length) {
+			$("#token-purchase-agreement-continue").removeAttr("disabled");
+		} else {
+			$("#token-purchase-agreement-continue").attr("disabled", "disabled");
+		}
+	});
+
+	$(".td-box").click(function() {
+		secondary_pages();
+	});
+
+	var pc = 'http://img.scry.info/upload/file/2017/08/28/1503915709755_ace03306-9192-411f-ab0e-73e815a65f47.gif';
+	var wap = 'http://img.scry.info/upload/file/2017/08/29/1503981973434_95d74295-c6be-4a80-aa57-04490ca4ee6b.gif';
+
+	if (IsPC()) {
+		$("#index_b_img1").attr('src', pc);
+		$("#index_b_img2").attr('src', pc);
+
+		change_left();
+		$(window).resize(function() {
+			change_left();
+		});
+
+	} else {
+		$("#index_b_img1").attr('src', wap);
+		$("#index_b_img2").attr('src', wap);
+
+		change_left2();
+		$(window).resize(function() {
+			change_left2();
+		});
+
+	}
+
+});
+
+function change_left() {
+	var cf = document.body.clientWidth;
+	if (cf < 1600) {
+		cf = -(1600 - cf) / 2
+	} else {
+		cf = 0;
+	}
+
+	$("#index_b_img1").css("marginLeft", cf);
+	$("#index_b_img2").css("marginLeft", cf);
+}
+
+
+//兼容手机
+function change_left2() {
+	var cf = document.body.clientWidth;
+	if (cf < 630) {
+		cf = -(630 - cf) / 2
+	} else {
+		cf = 0;
+	}
+
+	$("#index_b_img1").css("marginLeft", cf);
+	$("#index_b_img2").css("marginLeft", cf);
+}
+
+function secondary_pages() {
+	//2017.8.25屏蔽，据说以后打开
+	//return;
+
+	var whitepaper_cookie = $.cookie("whitepaper_cookie");
+	if (null != whitepaper_cookie) {
+		secondary_pages_to();
+	} else {
+		$(".token-disclaimer").show();
+		$(".modal-backdrop").show();
+	}
+}
+
+function secondary_pages_to() {
+	$.cookie("whitepaper_cookie", "1", {
+		expires : 365 * 24 * 60 * 60,
+		path : "/"
+	});
+	window.location.href = base + "/secondary_pages";
+}
+
+
+

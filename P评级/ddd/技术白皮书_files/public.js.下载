@@ -1,0 +1,107 @@
+var number_verify = /^[0-9]*[1-9][0-9]*$/; // 正整数
+var password_verify = /(^.*?[a-zA-Z]+.*?\d+.*?$)|(^.*?\d+.*?[a-zA-Z]+.*?$)/; // 密码
+var username_verify = /^[a-zA-z][a-zA-Z0-9_]{5,15}$/; // 用户名 小写字母开始6~16为
+
+var phone_verify = /^1[3|5|7|8]\d{9}$/; // 手机号
+var plane_verify = /^((\d{3}[-]\d{7,8})|(\d{3}\d{7,8}))$/; // 座机
+
+var email_verify = /^([a-z0-9A-Z]+[_|-|\\.]?)+[a-z0-9A-Z]@ ([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$/; // 邮箱
+
+
+//formatTime("2016-06-20 14:12:13"); // yyyy-MM-dd HH:mm:ss
+//根据传入的时间经行JSON对象输出，用于IE不支持new Date("2012-12-12")的情况
+function formatTime(date) {
+	var obj = null;
+	try {
+		obj = "{";
+		var param = date.split(" "); // 得到2016-06-20和14:12:13
+		if (param.length == 2) {
+			obj += "date:'" + param[0] + "',";
+			obj += "time:'" + param[1] + "',";
+
+			var time1 = param[0].split("-"); // 得到2016和06和20
+			obj += "yyyy:'" + time1[0] + "',";
+			obj += "MM:'" + (time1[1] - 1) + "',";
+			obj += "dd:'" + time1[2] + "',";
+
+			var time2 = param[1].split(":"); // 得到14和12和13
+			obj += "HH:'" + time2[0] + "',";
+			obj += "mm:'" + time2[1] + "',";
+			obj += "ss:'" + time2[2] + "'";
+		}
+		obj += "}";
+
+		obj = eval('(' + obj + ')');
+	} catch (e) {}
+	return obj;
+}
+
+//根据传入的时间经行时间对象返回，用于IE不支持new Date("2012-12-12")的情况
+function getFormatTime(date) {
+	var indate = new Date();
+
+	try {
+		var param = date.split(" "); // 得到2016-06-20和14:12:13
+		if (param.length == 2) {
+			var time1 = param[0].split("-"); // 得到2016和06和20
+			var time2 = param[1].split(":"); // 得到14和12和13
+			indate.setFullYear(time1[0]);
+			indate.setMonth((time1[1] - 1));
+			indate.setDate(time1[2]);
+			indate.setHours(time2[0]);
+			indate.setMinutes(time2[1]);
+			indate.setSeconds(time2[2]);
+		} else {
+
+		}
+	} catch (e) {}
+	return indate;
+}
+
+
+//根据url返回参数，主路径健为url。其余 健为参数名称，值为参数值
+function getParam(url) {
+	var obj = "{";
+	var param = url.split("?");
+	if (param.length == 1) {
+		obj += "url:'" + param[0] + "'";
+	} else {
+		obj += "url:'" + param[0] + "',";
+		var pa = param[1].split("&");
+		for (var i = 0; i < pa.length; i++) {
+			if (i != 0) {
+				obj += ",";
+			}
+			obj += pa[i].split("=")[0] + ":'" + pa[i].split("=")[1] + "'";
+		}
+	}
+	obj += "}";
+	return eval('(' + obj + ')');
+}
+var paran_url = getParam(window.location.href);
+//layer函数
+var layer_loading;
+function layer_loading_open() {
+	layer_loading = layer.load(1, {
+		shade : [ 0.1, '#fff' ] //0.1透明度的白色背景
+	});
+}
+
+function layer_loading_close() {
+	layer.close(layer_loading);
+}
+
+function IsPC() {
+	var userAgentInfo = navigator.userAgent;
+	var Agents = [ "Android", "iPhone",
+		"SymbianOS", "Windows Phone",
+		"iPad", "iPod" ];
+	var flag = true;
+	for (var v = 0; v < Agents.length; v++) {
+		if (userAgentInfo.indexOf(Agents[v]) > 0) {
+			flag = false;
+			break;
+		}
+	}
+	return flag;
+}

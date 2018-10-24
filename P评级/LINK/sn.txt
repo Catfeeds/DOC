@@ -1,0 +1,7 @@
+USER-SC £ºAs an oracle service, ChainLink nodes return replies to data requests or queries made by or on behalf of a user contract, which we refer to as requesting contracts
+on-chain contract CHAINLINK-SC
+	a reputation contract,  The reputation contract keeps track of oracle-service-provider
+	an order-matching contract,  takes a proposed service level agreement and collects bids from oracle providers
+	an aggregatingcontract. collects the oracle providers¡¯ responses and calculates the final collective result of the ChainLink query
+The on-chain work flow has three steps: 1) oracle selection, 2) data reporting, 3) result aggregation.
+ChainLink Core. The core node software is responsible for interfacing with the blockchain, scheduling, and balancing work across its various external services.
