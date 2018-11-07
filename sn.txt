@@ -31,3 +31,8 @@ ratingtoken
 
 XVG 这样的币有自己的平台为什么在ETH上发币？在ETH上的币怎么和表皮书对应？
 
+币安的API
+API Key:
+4xjTPRIwtHxTJcRA918rubEWVYNgNqKLXIMocjedha027qxHf06hXjCrpOySxVZ1
+Secret Key:  出于安全考虑，Secret Key只在创建时显示。若Secret Key遗失，可删除后创建并使用新的API。
+HaUDF7BLs0iQVWZQfwhJ1NyR03BaLGfkrvtB94pIsXlJV3X6o3UmBhbTKaxfjSlM
