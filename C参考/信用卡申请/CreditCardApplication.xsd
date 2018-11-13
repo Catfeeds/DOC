@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.0">
+	<xs:element name="Application">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Applicant" minOccurs="0"/>
+				<xs:element ref="Fraud" minOccurs="0"/>
+				<xs:element ref="LogicCheck" minOccurs="0"/>
+				<xs:element ref="RejectReason" minOccurs="0"/>
+				<xs:element ref="NoteQuestionList" minOccurs="0"/>
+				<xs:element ref="SysQuestionList" minOccurs="0"/>
+				<xs:element ref="OtherQuestionList" minOccurs="0"/>
+				<xs:element ref="Decision" minOccurs="0"/>
+				<xs:element ref="ApplicationScore" minOccurs="0"/>
+				<xs:element ref="ProcessingHistory" minOccurs="0"/>
+				<xs:element ref="MessageList" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="ProductDecisionType" type="xs:string" use="optional"/>
+			<xs:attribute name="DecisionType" type="xs:string" use="optional"/>
+			<xs:attribute name="ApplicationId" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCardKind" type="xs:string" use="optional"/>
+			<xs:attribute name="ProductId" type="xs:string" use="optional"/>
+			<xs:attribute name="VtmCardNo" type="xs:string" use="optional"/>
+			<xs:attribute name="TxdSuccessFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="IsBatchFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="PromotionMode" type="xs:string" use="optional"/>
+			<xs:attribute name="FrobidTrade" type="xs:string" use="optional"/>
+			<xs:attribute name="HghQualityLvl" type="xs:string" use="optional"/>
+			<xs:attribute name="CompDuty" type="xs:string" use="optional"/>
+			<xs:attribute name="BranchId" type="xs:string" use="optional"/>
+			<xs:attribute name="ProductReduce" type="xs:string" use="optional"/>
+			<xs:attribute name="InnovativeId" type="xs:string" use="optional"/>
+			<xs:attribute name="CorpId" type="xs:string" use="optional"/>
+			<xs:attribute name="CorpStatus" type="xs:string" use="optional"/>
+			<xs:attribute name="WayKind1" type="xs:string" use="optional"/>
+			<xs:attribute name="WayKind2" type="xs:string" use="optional"/>
+			<xs:attribute name="WayKind3" type="xs:string" use="optional"/>
+			<xs:attribute name="EnterpriseProperty" type="xs:string" use="optional"/>
+			<xs:attribute name="RhValidFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="TrriggerDFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="TrriggerRFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="LimitDemotionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="CompCategroy" type="xs:string" use="optional"/>
+			<xs:attribute name="CompYear" type="xs:integer" use="optional"/>
+			<xs:attribute name="MonthSinceOpen" type="xs:integer" use="optional"/>
+			<xs:attribute name="IvResult" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCorpAddress" type="xs:string" use="optional"/>
+			<xs:attribute name="AppHomeAddress" type="xs:string" use="optional"/>
+			<xs:attribute name="SpecialBusinessId" type="xs:string" use="optional"/>
+			<xs:attribute name="TrriggerFdFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="TrriggerFrFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="GroupCode" type="xs:string" use="optional"/>
+			<xs:attribute name="CorpRgstDate" type="xs:date" use="optional"/>
+			<xs:attribute name="CorpRgstAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="FundChkRst" type="xs:string" use="optional"/>
+			<xs:attribute name="AppFileSrc" type="xs:string" use="optional"/>
+			<xs:attribute name="QuickCardFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="RiskLevelDeflt" type="xs:string" use="optional"/>
+			<xs:attribute name="MakeCardFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="HighRiskApp" type="xs:string" use="optional"/>
+			<xs:attribute name="SuspiciousApp" type="xs:string" use="optional"/>
+			<xs:attribute name="OrdinaryCustom" type="xs:string" use="optional"/>
+			<xs:attribute name="IndustryCode1" type="xs:string" use="optional"/>
+			<xs:attribute name="IndustryCode2" type="xs:string" use="optional"/>
+			<xs:attribute name="C5IssMod" type="xs:string" use="optional"/>
+			<xs:attribute name="IdsVerifyFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="NetFrobidTrade" type="xs:string" use="optional"/>
+			<xs:attribute name="BankSign" type="xs:string" use="optional"/>
+			<xs:attribute name="RhStatementFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="Star3PromotionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="MoreoverCcapplyFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="ProductDemotionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="UsePbocType" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Applicant">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Account" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ViceCardApplicant" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Loan" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Deposit" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Mortgage" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="PBOC" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="FinancialFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="SpecialFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="PaperType" type="xs:string" use="optional"/>
+			<xs:attribute name="PaperId" type="xs:string" use="optional"/>
+			<xs:attribute name="BirthDate" type="xs:date" use="optional"/>
+			<xs:attribute name="AppGender" type="xs:string" use="optional"/>
+			<xs:attribute name="UnionBlFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="PbBlFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCorpTel" type="xs:string" use="optional"/>
+			<xs:attribute name="AppPhone" type="xs:string" use="optional"/>
+			<xs:attribute name="HaveCardFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="HaveTxdFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppTxdAgain" type="xs:string" use="optional"/>
+			<xs:attribute name="AssetTotalAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="PreCreditAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="PersonalTax" type="xs:double" use="optional"/>
+			<xs:attribute name="SocialSecAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="LatestProvideDt" type="xs:date" use="optional"/>
+			<xs:attribute name="ProvideMonth" type="xs:integer" use="optional"/>
+			<xs:attribute name="MedicalInsAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="LocalHouseholdFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="MortgageAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="MortgagePayAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="CorpDepositAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="SharehodinfRadio" type="xs:double" use="optional"/>
+			<xs:attribute name="CorpSizeSign" type="xs:double" use="optional"/>
+			<xs:attribute name="ExistCustLmt" type="xs:double" use="optional"/>
+			<xs:attribute name="CivilOrbwCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CurCycleAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="OrbwCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CancelFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="TxdBanlance" type="xs:double" use="optional"/>
+			<xs:attribute name="TxdSumCycleCntM24" type="xs:integer" use="optional"/>
+			<xs:attribute name="TxdMaxCycleTermM24" type="xs:integer" use="optional"/>
+			<xs:attribute name="AcctLCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="OrbwCntM24" type="xs:integer" use="optional"/>
+			<xs:attribute name="HouseType" type="xs:string" use="optional"/>
+			<xs:attribute name="CustCategroy" type="xs:string" use="optional"/>
+			<xs:attribute name="CustCategroyFinal" type="xs:string" use="optional"/>
+			<xs:attribute name="AppEducation" type="xs:string" use="optional"/>
+			<xs:attribute name="AppHomeCode" type="xs:string" use="optional"/>
+			<xs:attribute name="MarryStatus" type="xs:string" use="optional"/>
+			<xs:attribute name="PyFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="OdFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="ObankFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="GraylistFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="CustCategroyRtn" type="xs:string" use="optional"/>
+			<xs:attribute name="LegalFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="SocialSecBase" type="xs:double" use="optional"/>
+			<xs:attribute name="FundBase" type="xs:double" use="optional"/>
+			<xs:attribute name="FundAmtInput" type="xs:double" use="optional"/>
+			<xs:attribute name="AllSumCycleCntM24" type="xs:integer" use="optional"/>
+			<xs:attribute name="AllMaxCycleTermM24" type="xs:integer" use="optional"/>
+			<xs:attribute name="StaffBlFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="ValidProvideFlag1" type="xs:string" use="optional"/>
+			<xs:attribute name="ValidProvideFlag2" type="xs:string" use="optional"/>
+			<xs:attribute name="CashCustCategroyRtn" type="xs:string" use="optional"/>
+			<xs:attribute name="WorkKind" type="xs:string" use="optional"/>
+			<xs:attribute name="CustStageAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="NetCustCategroyRtn" type="xs:string" use="optional"/>
+			<xs:attribute name="ValidFundFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="CenterFundPayStatus" type="xs:string" use="optional"/>
+			<xs:attribute name="CenterFundPayMonth" type="xs:date" use="optional"/>
+			<xs:attribute name="CenterFundBase" type="xs:double" use="optional"/>
+			<xs:attribute name="ValidMedicalFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="LatestMedicalAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="PyEducation" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Account">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Card" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="AcctType" type="xs:string" use="optional"/>
+			<xs:attribute name="AcctNo" type="xs:string" use="optional"/>
+			<xs:attribute name="AcctAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="Mob" type="xs:integer" use="optional"/>
+			<xs:attribute name="PaymentTerm" type="xs:integer" use="optional"/>
+			<xs:attribute name="CycleCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="MaxCycleCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="AcctStatus" type="xs:string" use="optional"/>
+			<xs:attribute name="OverdueFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AcctBal" type="xs:double" use="optional"/>
+			<xs:attribute name="CorpId" type="xs:string" use="optional"/>
+			<xs:attribute name="AddrType" type="xs:string" use="optional"/>
+			<xs:attribute name="CycleCntM12" type="xs:integer" use="optional"/>
+			<xs:attribute name="MaxCycleCntM12" type="xs:integer" use="optional"/>
+			<xs:attribute name="DepPutSameDayM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="TempAmt" type="xs:double" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Card">
+		<xs:complexType>
+			<xs:attribute name="MasterViceFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="CardNo" type="xs:string" use="optional"/>
+			<xs:attribute name="ProductId" type="xs:string" use="optional"/>
+			<xs:attribute name="CardStatus" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ViceCardApplicant">
+		<xs:complexType>
+			<xs:attribute name="VicePaperType" type="xs:string" use="optional"/>
+			<xs:attribute name="VicePaperId" type="xs:string" use="optional"/>
+			<xs:attribute name="ViceBirthDate" type="xs:date" use="optional"/>
+			<xs:attribute name="ViceGender" type="xs:string" use="optional"/>
+			<xs:attribute name="ViceCorpTel" type="xs:string" use="optional"/>
+			<xs:attribute name="VicePhone" type="xs:string" use="optional"/>
+			<xs:attribute name="ViceHomeTel" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Loan">
+		<xs:complexType>
+			<xs:attribute name="LoanOpenDate" type="xs:date" use="optional"/>
+			<xs:attribute name="LoanType" type="xs:string" use="optional"/>
+			<xs:attribute name="FiveCategroy" type="xs:string" use="optional"/>
+			<xs:attribute name="BusinessType" type="xs:string" use="optional"/>
+			<xs:attribute name="Bal" type="xs:double" use="optional"/>
+			<xs:attribute name="AcFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AssumeKind" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Deposit">
+		<xs:complexType>
+			<xs:attribute name="DepositOpenDate" type="xs:date" use="optional"/>
+			<xs:attribute name="DairyBalance90" type="xs:double" use="optional"/>
+			<xs:attribute name="OtherDairyBal90" type="xs:double" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Mortgage">
+		<xs:complexType>
+			<xs:attribute name="CollateralValue" type="xs:double" use="optional"/>
+			<xs:attribute name="MhouseEltPrice" type="xs:double" use="optional"/>
+			<xs:attribute name="NmHouseEltPrice" type="xs:double" use="optional"/>
+			<xs:attribute name="CarEltPrice" type="xs:double" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PBOC">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PBOCCreditCard" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="CcQueryCntM3" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcQueryCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcCardSentFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="CcAurCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="LowPayStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcCntTotal" type="xs:integer" use="optional"/>
+			<xs:attribute name="DebtTotalAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="GcCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="GcBalance" type="xs:double" use="optional"/>
+			<xs:attribute name="AdCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="AdBalance" type="xs:double" use="optional"/>
+			<xs:attribute name="FundPayMonth" type="xs:date" use="optional"/>
+			<xs:attribute name="FundPayStatus" type="xs:string" use="optional"/>
+			<xs:attribute name="FundAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="FundPercent" type="xs:double" use="optional"/>
+			<xs:attribute name="OtherCardCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcOvd1Amt1000Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcOvd2Amt500Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcOvd3Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcM64Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcM32Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcM124Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcStatusAmt0Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="HloanOvd2Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="HloanM244Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CloanStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CloanM243Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="OloanStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="OloanM242Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="FloanStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="FloanM242Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="EloanStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="EloanM242Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="LoanDTI" type="xs:double" use="optional"/>
+			<xs:attribute name="HloanStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="HloanM243Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcMaxOvd6Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="CardAgingMin" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcUsageRate" type="xs:double" use="optional"/>
+			<xs:attribute name="CreditQueryCnt3" type="xs:integer" use="optional"/>
+			<xs:attribute name="NovdAcctRate12" type="xs:double" use="optional"/>
+			<xs:attribute name="OvdRateM24" type="xs:double" use="optional"/>
+			<xs:attribute name="PbocSign" type="xs:string" use="optional"/>
+			<xs:attribute name="PbocFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="CreditAgingMin" type="xs:integer" use="optional"/>
+			<xs:attribute name="CreditQueryCnt6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NovdAcctRate6" type="xs:double" use="optional"/>
+			<xs:attribute name="UsageRateMore50" type="xs:double" use="optional"/>
+			<xs:attribute name="LoanCnt24" type="xs:integer" use="optional"/>
+			<xs:attribute name="CardAgingMax" type="xs:integer" use="optional"/>
+			<xs:attribute name="LatestQueryMth" type="xs:integer" use="optional"/>
+			<xs:attribute name="CcStatusAmt1000Cnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="LoanStatusCnt" type="xs:integer" use="optional"/>
+			<xs:attribute name="GrtFiveCategroy" type="xs:string" use="optional"/>
+			<xs:attribute name="RhPreCreditAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="CustAvgDebt" type="xs:double" use="optional"/>
+			<xs:attribute name="CcFirstMonths" type="xs:string" use="optional"/>
+			<xs:attribute name="CcAverage6CompareTotal" type="xs:string" use="optional"/>
+			<xs:attribute name="CcUsedCompareTotal" type="xs:string" use="optional"/>
+			<xs:attribute name="CcUsedAmtCur" type="xs:double" use="optional"/>
+			<xs:attribute name="CcAvgUsedAmtM6" type="xs:double" use="optional"/>
+			<xs:attribute name="CcQueryCntM1" type="xs:integer" use="optional"/>
+			<xs:attribute name="OtherOloanCnt" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PBOCCreditCard">
+		<xs:complexType>
+			<xs:attribute name="OtherAvgUsedAmtM6" type="xs:double" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Fraud">
+		<xs:complexType>
+			<xs:attribute name="RiskLevel" type="xs:integer" use="optional"/>
+			<xs:attribute name="FraudResult" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LogicCheck">
+		<xs:complexType>
+			<xs:attribute name="Over3CnameFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCtToPbFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCnToPbFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCaToPbFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppHtToPbFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppHaToPbFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppPhoneToPbFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCtToUnionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCnToUnionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCaToUnionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppHtToUnionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppHaToUnionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppPhoneToUnionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppSignToLastFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="HcAddrToUnion" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCnToFundFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="AppCnToPbocFlag" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RejectReason">
+		<xs:complexType>
+			<xs:attribute name="MaterialCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="UnusualCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="WorkingCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ForgeCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ShortsCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="HighRiskCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="SimulatedCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="CommissionCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="FakeCorpCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="InvalidTelCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="UnionBlCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="BankInBlCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NotExistIdCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="UnusualTelCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="BadPbocCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="AgeUnmatchCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="LimDutyCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NoInfoCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="OrgCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="LimitCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="FornCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ScoreCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NeedFileCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="FrtnCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="InputCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="AppBookCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="OffJobCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="SelfSignCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NoCardCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="PolicyCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="CancelAppCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="OtherRsnCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NoFundCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="BrandCardCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="IdFundCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="BadInfoCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ExcCreditCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="LimPopCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="IncomeCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="WorkAgeCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="AddressrCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="RdnCdCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="MobCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="GenIndCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="MustFillCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="LackFileCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="AssPbocCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProModeCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="LostContCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="OnJobCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="SignUnmatchCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="RefuseProcCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NotSedCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="MeetRequCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="RepeatAppCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="NameUnmatchCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProcessingCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="RegFundCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="AcctBranchCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="UnusualConCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="ProPromptCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="CorpSimulatedCntM6" type="xs:integer" use="optional"/>
+			<xs:attribute name="HighRiskExtendCntM6" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NoteQuestionList">
+		<xs:complexType>
+			<xs:attribute name="NoteQuestionCode" type="xs:string" use="optional"/>
+			<xs:attribute name="NoteQuestionRst" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SysQuestionList">
+		<xs:complexType>
+			<xs:attribute name="QuestionLibCode" type="xs:string" use="optional"/>
+			<xs:attribute name="QuestionCode" type="xs:string" use="optional"/>
+			<xs:attribute name="QuestionRst" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherQuestionList">
+		<xs:complexType>
+			<xs:attribute name="OtherQuestionCode" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Decision">
+		<xs:complexType>
+			<xs:attribute name="InDecisionRst" type="xs:string" use="optional"/>
+			<xs:attribute name="OutDecisionRst" type="xs:string" use="optional"/>
+			<xs:attribute name="FraudDecisionRst" type="xs:string" use="optional"/>
+			<xs:attribute name="NoteDecisionRst" type="xs:string" use="optional"/>
+			<xs:attribute name="DialOrder" type="xs:string" use="optional"/>
+			<xs:attribute name="ScoreResult" type="xs:string" use="optional"/>
+			<xs:attribute name="AdmDecisionRst" type="xs:string" use="optional"/>
+			<xs:attribute name="IcdtInc" type="xs:double" use="optional"/>
+			<xs:attribute name="VerifyInc" type="xs:double" use="optional"/>
+			<xs:attribute name="CustLmt" type="xs:double" use="optional"/>
+			<xs:attribute name="CardLmt" type="xs:double" use="optional"/>
+			<xs:attribute name="TxdLmt" type="xs:double" use="optional"/>
+			<xs:attribute name="CxLmt" type="xs:double" use="optional"/>
+			<xs:attribute name="DemotionFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="RiskPricing" type="xs:string" use="optional"/>
+			<xs:attribute name="RandomNumber" type="xs:integer" use="optional"/>
+			<xs:attribute name="ChallengeType" type="xs:string" use="optional"/>
+			<xs:attribute name="ChallengePath" type="xs:string" use="optional"/>
+			<xs:attribute name="Threshold" type="xs:string" use="optional"/>
+			<xs:attribute name="QuestionCode" type="xs:string" use="optional"/>
+			<xs:attribute name="NoteCheckRst" type="xs:string" use="optional"/>
+			<xs:attribute name="CustCategroyFinal" type="xs:string" use="optional"/>
+			<xs:attribute name="QuickCardFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="RiskLevelDeflt" type="xs:string" use="optional"/>
+			<xs:attribute name="CashProductKind" type="xs:string" use="optional"/>
+			<xs:attribute name="CashCustKind" type="xs:string" use="optional"/>
+			<xs:attribute name="CashDayAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="GwyPositionAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="NetCustKind" type="xs:string" use="optional"/>
+			<xs:attribute name="ValidMedicalFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="LatestMedicalAmt" type="xs:double" use="optional"/>
+			<xs:attribute name="RefuseTime" type="xs:integer" use="optional"/>
+			<xs:attribute name="ReachSocialFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="ReachFundFlag" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApplicationScore">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ScoreModelReturnInfo" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScoreModelReturnInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ScoredCharacteristic" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="ScoreModelName" type="xs:string" use="optional"/>
+			<xs:attribute name="ScoreModelID" type="xs:string" use="optional"/>
+			<xs:attribute name="FinalScore" type="xs:double" use="optional"/>
+			<xs:attribute name="RawScore" type="xs:double" use="optional"/>
+			<xs:attribute name="TotalMaxBinScore" type="xs:double" use="optional"/>
+			<xs:attribute name="UnexpectedCount" type="xs:integer" use="optional"/>
+			<xs:attribute name="CharacteristicCount" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScoredCharacteristic">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ReasonCode" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="MappedFieldName" type="xs:string" use="optional"/>
+			<xs:attribute name="CharacteristicName" type="xs:string" use="optional"/>
+			<xs:attribute name="CharacteristicID" type="xs:string" use="optional"/>
+			<xs:attribute name="CharacteristicValue" type="xs:string" use="optional"/>
+			<xs:attribute name="BinLabel" type="xs:string" use="optional"/>
+			<xs:attribute name="BaselineScore" type="xs:double" use="optional"/>
+			<xs:attribute name="MaxBinScore" type="xs:double" use="optional"/>
+			<xs:attribute name="PartialScore" type="xs:double" use="optional"/>
+			<xs:attribute name="UnexpectedValueFlag" type="xs:string" use="optional"/>
+			<xs:attribute name="ReasonWeight" type="xs:double" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReasonCode">
+		<xs:complexType>
+			<xs:attribute name="Code" type="xs:string" use="optional"/>
+			<xs:attribute name="Message" type="xs:string" use="optional"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="Rank" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProcessingHistory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DecisionFlowHistory" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="DerivedVariableHistory" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DecisionFlowHistory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DecisionFlowStepHistory" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="StartTimestamp" type="xs:dateTime" use="optional"/>
+			<xs:attribute name="StopTimestamp" type="xs:dateTime" use="optional"/>
+			<xs:attribute name="ElapsedMillis" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DecisionFlowStepHistory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RulesetHistory" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="StepIndex" type="xs:integer" use="optional"/>
+			<xs:attribute name="TaskName" type="xs:string" use="optional"/>
+			<xs:attribute name="ImplementationType" type="xs:string" use="optional"/>
+			<xs:attribute name="ImplementationName" type="xs:string" use="optional"/>
+			<xs:attribute name="TableResult" type="xs:string" use="optional"/>
+			<xs:attribute name="FunctionResult" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RulesetHistory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RuleHistory" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="RulesetName" type="xs:string" use="optional"/>
+			<xs:attribute name="RulesetNo" type="xs:string" use="optional"/>
+			<xs:attribute name="RulesetResult" type="xs:string" use="optional"/>
+			<xs:attribute name="RulesetType" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RuleHistory">
+		<xs:complexType>
+			<xs:attribute name="RuleName" type="xs:string" use="optional"/>
+			<xs:attribute name="RuleNo" type="xs:string" use="optional"/>
+			<xs:attribute name="Priority" type="xs:string" use="optional"/>
+			<xs:attribute name="RuleResult" type="xs:string" use="optional"/>
+			<xs:attribute name="ReasonText" type="xs:string" use="optional"/>
+			<xs:attribute name="RuleType" type="xs:string" use="optional"/>
+			<xs:attribute name="RuleReasonCode" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DerivedVariableHistory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PropertyHistory" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="FlowName" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PropertyHistory">
+		<xs:complexType>
+			<xs:attribute name="Index" type="xs:integer" use="optional"/>
+			<xs:attribute name="ImplementationType" type="xs:string" use="optional"/>
+			<xs:attribute name="ImplementationName" type="xs:string" use="optional"/>
+			<xs:attribute name="Name" type="xs:string" use="optional"/>
+			<xs:attribute name="DataType" type="xs:string" use="optional"/>
+			<xs:attribute name="Value" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MessageList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Message" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="StatusCode" type="xs:integer" use="optional"/>
+			<xs:attribute name="StatusDescription" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Message">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Description" type="xs:string" minOccurs="0"/>
+				<xs:element name="DetailedDescription" type="xs:string" minOccurs="0"/>
+				<xs:element name="Resolution" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="MessageNumber" type="xs:integer" use="optional"/>
+			<xs:attribute name="SeverityCode" type="xs:integer" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
