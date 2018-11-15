@@ -1,5 +1,0 @@
-cd C:\Blaze\Advisor71\bin
-setenv
-set classpath=%classpath%;C:/BlazeDecisionRepository/ExtensionLibary/PEDM/providers.jar;C:/BlazeDecisionRepository/ExtensionLibary/PEDM/rt.jar
-cd C:\PEDM\deploy
-java -Xmx1024m -Xms512m com.blazesoft.server.deploy.tools.NdAdvisorProjectCompiler -server PEDM.server -name CreditCardTest.server
